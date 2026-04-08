@@ -2,14 +2,15 @@ import { useAuth } from "@/shared/context/AuthContext";
 import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
 import {
-    ActivityIndicator,
-    Dimensions,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  ActivityIndicator,
+  Dimensions,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 const { width, height } = Dimensions.get("window");
@@ -100,7 +101,11 @@ export const LoginScreen = ({
         <View style={styles.statusBar} />
 
         {/* Heading */}
-        <Text style={styles.heading}>ANDAL</Text>
+        <Image
+          source={require("@/assets/images/ogya.png")}
+          className="w-40 h-28"
+          resizeMode="contain"
+        />
         <Text style={styles.subheading}>
           Lanjutkan perjalanan Anda bersama Andal
         </Text>
@@ -290,8 +295,8 @@ const styles = StyleSheet.create({
   },
 
   statusBar: {
-    height: 52,
-    marginTop: 52,
+    height: 30,
+    marginTop: 30,
   },
 
   // Badge

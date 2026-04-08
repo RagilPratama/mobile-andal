@@ -6,9 +6,8 @@ import { Text, View } from "react-native";
 const TabLabel = ({ label, focused }: { label: string; focused: boolean }) => (
   <View>
     <Text
-      className={`text-[12px] mt-1 font-JakartaSemiBold ${
-        focused ? "text-[#1E5A96]" : "text-neutral-500"
-      }`}
+      className={`text-[12px] mt-1 font-JakartaSemiBold ${focused ? "text-[#1E5A96]" : "text-neutral-500"
+        }`}
     >
       {label}
     </Text>
@@ -89,7 +88,7 @@ export default function TabLayout() {
             />
           ),
           tabBarLabel: ({ focused }) => (
-            <TabLabel label="Profil" focused={focused} />
+            <TabLabel label="Profile" focused={focused} />
           ),
         }}
       />

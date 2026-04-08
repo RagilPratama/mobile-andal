@@ -1,7 +1,7 @@
 import { useAuth } from "@/shared/context/AuthContext";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 
 interface AndalHeaderProps {
   onLoginPress?: () => void;
@@ -30,16 +30,18 @@ export const AndalHeader = ({ onLoginPress }: AndalHeaderProps) => {
       end={{ x: 0, y: 1 }}
       style={{
         paddingTop: 45,
-        paddingBottom: 20,
+        paddingBottom: 5,
         paddingHorizontal: 16,
       }}
     >
       <View className="flex-row items-center justify-between mt-4">
         {/* Logo Andal and User Info */}
         <View className="flex-row items-center flex-1">
-          <Text className="text-[30px] font-JakartaBold text-[#1E5A96]">
-            Andal
-          </Text>
+          <Image
+            source={require("@/assets/images/ogya.png")}
+            className="w-40 h-28"
+            resizeMode="contain"
+          />
         </View>
 
         {/* Buttons - Show only if not logged in */}
@@ -50,7 +52,7 @@ export const AndalHeader = ({ onLoginPress }: AndalHeaderProps) => {
               onPress={handleLoginPress}
               className="px-4 py-2 border-2 border-[#1E5A96] rounded-lg"
             >
-              <Text className="text-[#1E5A96] font-JakartaMedium text-sm">
+              <Text className="text-[#1E5A96] font-JakartaMedium text-md w-auto">
                 Masuk
               </Text>
             </TouchableOpacity>
@@ -64,7 +66,7 @@ export const AndalHeader = ({ onLoginPress }: AndalHeaderProps) => {
               }}
               className="px-4 py-2 border-2 border-[#1E5A96] rounded-lg"
             >
-              <Text className="text-[#1E5A96] font-JakartaMedium text-sm">
+              <Text className="text-[#1E5A96] font-JakartaMedium text-md w-auto">
                 Keluar
               </Text>
             </TouchableOpacity>
