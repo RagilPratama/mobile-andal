@@ -11,16 +11,16 @@ interface ServiceCard {
 export const ServiceCards = () => {
   const services: ServiceCard[] = [
     {
-      id: "claim",
-      title: "Pengajuan Klaim",
-      subtitle: "Pengajuan layanan klaim",
-      icon: "file-document",
+      id: "checkin",
+      title: "Check-In",
+      subtitle: "Absensi kedatangan di lokasi",
+      icon: "check-circle",
     },
     {
-      id: "non-claim",
-      title: "Pengajuan Non Klaim",
-      subtitle: "Pengajuan layanan non klaim",
-      icon: "file-document",
+      id: "Cuti",
+      title: "Pengajuan Cuti",
+      subtitle: "Pengajuan izin cuti",
+      icon: "calendar-account-outline",
     },
   ];
 

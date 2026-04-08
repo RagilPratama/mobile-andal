@@ -1,4 +1,5 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import { Text, TouchableOpacity, View } from "react-native";
 
 interface QuickMenu {
@@ -8,28 +9,37 @@ interface QuickMenu {
 }
 
 export const AndalQuickMenu = () => {
+  const router = useRouter();
+
   const menus: QuickMenu[] = [
     {
       id: "andal-utama",
-      title: "Andal Utama",
+      title: "Andal",
       icon: "home",
     },
     {
-      id: "formula",
-      title: "Formula Pengajuan",
+      id: "slip-gaji",
+      title: "Slip Gaji",
       icon: "file-document-outline",
     },
     {
-      id: "info",
-      title: "Informasi Andal",
-      icon: "information-outline",
+      id: "task-list",
+      title: "Tasklist",
+      icon: "clipboard-list-outline",
     },
     {
       id: "all",
-      title: "Lihat Semua",
+      title: "Semua",
       icon: "grid",
     },
   ];
+
+  const handleMenuPress = (menuId: string) => {
+    if (menuId === "all") {
+      router.push("/all-menu");
+    }
+    // Add more menu handlers as needed
+  };
 
   return (
     <View className="mx-4 mt-3 mb-4">
@@ -38,6 +48,7 @@ export const AndalQuickMenu = () => {
           <TouchableOpacity
             key={menu.id}
             activeOpacity={0.7}
+            onPress={() => handleMenuPress(menu.id)}
             className="bg-white rounded-2xl p-4 mb-3 items-center justify-center border border-neutral-200"
             style={{ width: "23%" }}
           >
